@@ -8,7 +8,7 @@ value $Agencyfmt 'GEORGE STICKS','GOLDEN GUILD'='AEA'
 				 'ALL STARS','STARS AND STRIPES'='AFT'
 				 other=none;
 
-proc print data=data1.talent4;
+proc print data=data1.talent4 label;
 title1 'Casting Call' c=green;
 title2 'Candidates' c=black h=2;
 footnote 'Last Edited: 8/8/2019';
@@ -41,7 +41,6 @@ proc print data=members;
 run;
 
 proc print data=members noobs label;
-
 var mem_id mem_months first gen;
 Label mem_id = 'Membership ID'
 	  mem_months='Membership Months'
