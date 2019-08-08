@@ -40,12 +40,14 @@ run;
 proc print data=members;
 run;
 
-proc print data=members noobs label;
+options pageno=10 nodate;
+proc print data=members noobs label n;
+
 var mem_id mem_months first gen;
 Label mem_id = 'Membership ID'
 	  mem_months='Membership Months'
 	  first='First Name'
 	  gen='Gender';
 where mem_id?'8' and mem_months<=40;
-options nodate nonumber byline;
 run;
+
