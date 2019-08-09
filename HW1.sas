@@ -1,8 +1,15 @@
-libname data1 'C:\Users\SSMS1301-18\Desktop\data1';
+/* Programming Assignment;
+Name: Yanjie Qi
+Perm#: 5382452
+Section: Tianzi Chen 1302(T R)
+1.*/
+
+libname data1 'C:\ Desktop\data1';
+
+* 2.;
 
 PROC PRINT data=data1.talent4;
 run;
-
 proc format;
 value $Agencyfmt 'GEORGE STICKS','GOLDEN GUILD'='AEA'
 				 'ALL STARS','STARS AND STRIPES'='AFT'
@@ -18,8 +25,8 @@ label LastName='Last Name'
 	  Agency='Union';
 where Height > 66;
 format Agency $Agencyfmt.;
-
-
+ 
+* 3.;
 
 data members;
 input first$ last$ mem_id$ mem_months gen$;
@@ -50,4 +57,12 @@ Label mem_id = 'Membership ID'
 	  gen='Gender';
 where mem_id?'8' and mem_months<=40;
 run;
+ 
+/*Note: Screenshot of the result viewer is in another file
+I do not understand why in the SSMS machines, 
+its titles could not be displayed normally; 
+instead, the first program had the title I set for the second. 
+I am pretty sure My code is right. 
+Please run in the local computer to see the exact correct output!*/
+
 
